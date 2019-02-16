@@ -633,6 +633,6 @@ A total of 99,500 queries per day can be made to the Get Venue Recommendations e
 
 ## Official documenation
 
-The original documentation of the API can be found at:
+The official documentation of the API can be found at:
 
 https://developer.foursquare.com/docs/api/venues/explore
