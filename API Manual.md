@@ -92,6 +92,36 @@ The above query utilizes the following query parameters:
 1.	query
 2.	limit
 3.	near
+
+The query can be constructed as follows:
+```
+import json, requests
+from foursquarekeys import foursquare_keys
+
+# This is the base URL
+base_url = 'https://api.foursquare.com/v2/venues/explore'
+params = dict(
+  client_id=foursquare_keys[0],
+  client_secret=foursquare_keys[1],
+  v='20180323',
+  near='New York, NY',
+  query='wine',
+  limit=1
+)
+
+# fire the request and receive response
+resp = requests.get(url=base_url, params=params)
+# get the text data received in the response`
+data = json.loads(resp.text)
+
+# to write the data to an external file, do the following.
+# Be sure to store the previous file with a name other than data.json before running this script again
+# otherwise older data would be overridden. The data.json file can be found in the same directory as this python file
+
+with open('data.json', 'w') as outfile:
+    json.dump(data, outfile, indent=2)
+```
+
 The response for this query is given below:
 
 ```
@@ -254,6 +284,37 @@ The above query utilizes the following parameters:
 3.	limit
 
 Section has been set to sights. The value for _section_ drives the search results in this case.
+
+The query can be constructed as follows:
+```
+import json, requests
+from foursquarekeys import foursquare_keys
+
+# This is the base URL
+base_url = 'https://api.foursquare.com/v2/venues/explore'
+params = dict(
+  client_id=foursquare_keys[0],
+  client_secret=foursquare_keys[1],
+  v='20180323',
+  ll='40.716558,-74.004608',
+  section='sights',
+  limit=1
+)
+
+# fire the request and receive response
+resp = requests.get(url=base_url, params=params)
+# get the text data received in the response`
+data = json.loads(resp.text)
+
+# to write the data to an external file, do the following.
+# Be sure to store the previous file with a name other than data.json before running this script again
+# otherwise older data would be overridden. The data.json file can be found in the same directory as this python file
+
+with open('data.json', 'w') as outfile:
+    json.dump(data, outfile, indent=2)
+```
+
+
 The response for this query is given below:
 
 ```
@@ -395,6 +456,37 @@ The above query fetches food venues near Chicago. It utilizes the following para
 1.	section
 2.	near
 3.	price
+
+The query can be constructed as follows:
+```
+import json, requests
+from foursquarekeys import foursquare_keys
+
+# This is the base URL
+base_url = 'https://api.foursquare.com/v2/venues/explore'
+
+params = dict(
+  client_id=foursquare_keys[0],
+  client_secret=foursquare_keys[1],
+  v='20180323',
+  near='Chicago, IL',
+  section='food',
+  limit=1,
+  price='1,2'
+)
+
+# fire the request and receive response
+resp = requests.get(url=base_url, params=params)
+# get the text data received in the response`
+data = json.loads(resp.text)
+
+# to write the data to an external file, do the following.
+# Be sure to store the previous file with a name other than data.json before running this script again
+# otherwise older data would be overridden. The data.json file can be found in the same directory as this python file
+
+with open('data.json', 'w') as outfile:
+    json.dump(data, outfile, indent=2)
+```
 
 Response for the above query is given below:
 ```
