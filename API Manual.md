@@ -84,7 +84,7 @@ The parameters are explained below:
 
 Let’s discuss the different queries that can be formed using the query parameters mentioned above. As mentioned earlier, client_id, client_secret and v are mandatory, so they have to be passed in every query.
 
-**Query 1**
+## Query 1
 
 https://api.foursquare.com/v2/venues/explore?client_id=04JOGOUXDKSCL2LDGHWILZDZXB0YUF5Q5NVOQ0CS2FFH3H2D&client_secret=W3N0K22PWTZLITEKUFCXA5UU0KKTJQNLHS1IOD0NQABZIBF4&v=20180323&query=wine&limit=1&near=New%20York,%20NY
 
@@ -244,7 +244,7 @@ The response for this query is given below:
 }
 ```
 
-**Query 2**
+## Query 2
 
 https://api.foursquare.com/v2/venues/explore?client_id=04JOGOUXDKSCL2LDGHWILZDZXB0YUF5Q5NVOQ0CS2FFH3H2D&client_secret=W3N0K22PWTZLITEKUFCXA5UU0KKTJQNLHS1IOD0NQABZIBF4&v=20180323&section=sights&limit=1&ll=40.716558,-74.004608
 
@@ -387,7 +387,7 @@ The response for this query is given below:
 
 ```
 
-**Query 3**
+## Query 3
 
 https://api.foursquare.com/v2/venues/explore?client_id=04JOGOUXDKSCL2LDGHWILZDZXB0YUF5Q5NVOQ0CS2FFH3H2D&client_secret=W3N0K22PWTZLITEKUFCXA5UU0KKTJQNLHS1IOD0NQABZIBF4&v=20180323&section=food&limit=2&near=Chicago,%20IL&price=1,2
 
@@ -569,7 +569,8 @@ Important fields in response are explained below:
 * categories: List of categories applied to that venue. 
 
 
-**Error messages:**
+## Error messages
+
 In case client_id and client_secure are not mentioned, the following response is received:
 
 ```
@@ -625,12 +626,12 @@ If latitude and longitude specified in ‘ll’ are invalid, then the following 
 }
 ```
 
-**Query limits:**
+## Query limits
 
 A total of 99,500 queries per day can be made to the Get Venue Recommendations endpoint of the Places API using a free account. For premium users, there is no limit to the number of calls they can make.
 
 
-**Official documenation**
+## Official documenation
 
 The original documentation of the API can be found at:
 
