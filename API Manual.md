@@ -24,7 +24,25 @@ The above URL structure specifies all the mandatory parameters that are required
 * Select a payment plan. Depending on whether you need premium features or not, select the plan which is most appropriate for your needs.
 * Once the app is created and payment plan is chosen, the app appears on the profile page, along with the required keys.
 
-The sample query can be accessed at: [https://developer.foursquare.com/docs/api](https://developer.foursquare.com/docs/api)
+A sample query in Python is as follows:
+
+```
+import json, requests
+url = 'https://api.foursquare.com/v2/venues/explore'
+
+params = dict(
+  client_id='CLIENT_ID', # replace with your key
+  client_secret='CLIENT_SECRET', # replace with your key
+  v='20180323',
+  ll='40.7243,-74.0018',
+  query='coffee',
+  limit=1
+)
+resp = requests.get(url=url, params=params)
+data = json.loads(resp.text)
+```
+
+The above code was taken from [https://developer.foursquare.com/docs/api](https://developer.foursquare.com/docs/api).
 
 Client ID and Client Secure are needed for Userless authentication. For User authentication, FourSquare uses OAuth 2.0. In this document, we focus on userless authentication.
 
@@ -610,3 +628,10 @@ If latitude and longitude specified in ‘ll’ are invalid, then the following 
 **Query limits:**
 
 A total of 99,500 queries per day can be made to the Get Venue Recommendations endpoint of the Places API using a free account. For premium users, there is no limit to the number of calls they can make.
+
+
+**Official documenation**
+
+The original documentation of the API can be found at:
+
+https://developer.foursquare.com/docs/api/venues/explore
